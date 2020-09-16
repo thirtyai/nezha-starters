@@ -1,7 +1,8 @@
 image::docs/images/nezha.png[align="center",width=550,height=104]
 ----
-nezha(哪吒) is a distributed micro service framework that base on Spring boot、 Dubbo、Nacos、Spring
-cloud gateway、Spring security、Sentinel、Seata、Caffeine、RocketMq、Redis、Mybatis、Mybatis-plus、Druid、Swagger、Knife4j、Hutool and other excellent projects.
+nezha(哪吒) is a distributed micro service framework that base on Spring boot、 Dubbo、Nacos、
+Springcloud gateway、Spring security、Sentinel、Seata、Caffeine、RocketMq、Redis、Mybatis、
+Mybatis-plus、Druid、Swagger、Knife4j、Hutool and other excellent projects.
 
 include three parts :
 
