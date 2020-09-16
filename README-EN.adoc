@@ -1,6 +1,5 @@
-= nezha(哪吒)
-
-****
+image::docs/images/nezha.png[align="center",width=550,height=104]
+----
 nezha(哪吒) is a distributed micro service framework that base on Spring boot、 Dubbo、Nacos、Spring cloud gateway、Spring security、Sentinel、Seata、Caffeine、RocketMq、Redis、Mybatis、Mybatis-plus、Druid、Swagger、Knife4j、Hutool and other excellent projects.
 
 include three parts :
@@ -8,9 +7,11 @@ include three parts :
 - nezha-starters: a framework.
 - nezha-tools: a command tool for developers. project level code generate and other commands.
 - nezha-platform: a platform. include some business modules. e.g.: cms, log, resource, member, shop etc.
-****
+----
 === nezha demo
-
+++++
+<iframe width="100%" height="500" src="https://nezha.thirtyai.com/video.html" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+++++
 
 === nezha feature keywords
 `spring` `dubbo` `distributed` `webmvc` `webflux` `micro service` `quick` `multi tenant` `cache`
@@ -19,12 +20,8 @@ include three parts :
 
 `flexible configuration` `project level generate`
 
-## nezha typical architecture
+=== nezha typical architecture
 ***
-++++
-<iframe width="100%" height="500" src="https://nezha.thirtyai.com/video.html" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-++++
-
 image::docs/images/nezha-framework.png[alt="架构图",align="center",width="100%"]
 
 ## goals and vision
