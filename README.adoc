@@ -11,7 +11,7 @@ nezha(哪吒)是基于Spring boot、Dubbo、Nacos、Spring cloud gateway、Sprin
 ***
 image::docs/images/demo.jpg[link="https://nezha.thirtyai.com/#td-block-1",align="center",width="100%"]
 
-=== NEZHA特点关键词
+=== nezha特点关键词
 ***
 `Spring体系` `Dubbo` `分布式` `webmvc` `webflux` `微服务` `快速` `多租户` `缓存` `流控` `国际化` `docker` `k8s`
 
