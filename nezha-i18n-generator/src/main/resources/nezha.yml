@@ -1,0 +1,31 @@
+server:
+    port: 6050
+
+#Get from nezha-tool using pwd [your password] command or run druid jar.
+#dataBase.PublicKey:
+
+spring:
+    application:
+        name: "nezha-i18n-generator"
+nezha:
+    i18n:
+        lists:
+            -   clsPackage: com.thirtyai.nezha.i18n
+                clsName: Status
+                resourceFolder: status
+                defaultLanguage: zh_CN
+    starters:
+        redis: false
+        swagger: false
+        nacos: false
+        # i18n 生成是否引入
+        i18n: true
+        security: false
+        log:
+            # log是否与 nacos 同步
+            nacos: true
+management:
+    endpoints:
+        web:
+            exposure:
+                include: "*"

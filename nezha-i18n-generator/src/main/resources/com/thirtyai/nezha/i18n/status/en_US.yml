@@ -1,0 +1,26 @@
+i18ns:
+    - {name: HTTP_Success,code: 200,desc: ok}
+    - {name: HTTP_Not_Found,code: 404,desc: 404 not found}
+    - {name: HTTP_Forbidden,code: 403,desc: 403 forbidden}
+    - {name: HTTP_Un_Authentication,code: 401,desc: 401 un authentication}
+    - {name: HTTP_Internal_Error,code: 500,desc: 500 error}
+    - {name: Application_None,code: 0000,desc: none status}
+    - {name: Application_Success,code: 1000,desc: success}
+    - {name: Application_Fail,code: 9999,desc: fail}
+    - {name: Security_Token_Type_Not_Found,code: 1009,desc: not found token type}
+    - {name: Security_Processor_Not_Found,code: 1008,desc: not found token processor}
+    - {name: Security_Credentials_Not_Found,code: 1007,desc: not found credential}
+    - {name: Security_LoginName_Password_Error,code: 1011,desc: login anme or password error}
+    - {name: Security_Email_Password_Error,code: 1012,desc: email or password error}
+    - {name: Security_No_Reason_Error,code: 1013,desc: no reason error}
+    - {name: Security_User_Not_Exist,code: 1014,desc: user not exist}
+    - {name: Security_Access_Token_Expired,code: 1015,desc: access token expired}
+    - {name: Security_Refresh_Token_Expired,code: 1016,desc: refresh token expired}
+    - {name: Security_Jwt_Token_Subject_Is_Null,code: 1017,desc: Jwt token subject is null}
+    - {name: Security_Jwt_Token_Encode_Error,code: 1018,desc: Jwt token encode exception}
+    - {name: Security_Jwt_Token_Decode_Error,code: 1019,desc: Jwt token decode exception}
+    - {name: Security_No_Authority_Access,code: 1020,desc: no authority for accessing}
+    - {name: Redis_Limit_Key_Is_Blank,code: 1030,desc: key is blank}
+    - {name: Redis_Limit_Is_Limit,code: 1031,desc: request is many，been limit}
+    - {name: Redis_Lock_Get_Lock_Fail,code: 1032,desc: get lock fail}
+    - {name: Redis_Lock_Key_Is_Blank,code: 1033,desc: key is blank}

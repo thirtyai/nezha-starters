@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="60 seconds">
+    <contextListener class="com.thirtyai.nezha.logs.listener.NezhaLoggerListener"/>
+
+    <property name="APP_NAME" value="admin-i18n"/>
+    <property name="LOG_ROOT" value="./logs"/>
+    <property name="LOG_FILEMAXDAY" value="10"/>
+    <property name="LOG_MAXFILESIZE" value="500MB"/>
+    <!--
+    <property name="INFO_APPENDER" value="INFO"/>
+    <property name="ERROR_APPENDER" value="ERROR"/>
+    -->
+    <!-- 彩色日志依赖的渲染类 -->
+    <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter"/>
+    <conversionRule conversionWord="wex"
+                    converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter"/>
+    <conversionRule conversionWord="wEx"
+                    converterClass="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter"/>
+    <!-- 彩色日志格式 -->
+    <property name="CONSOLE_LOG_PATTERN"
+              value="${CONSOLE_LOG_PATTERN:-%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}"/>
+    <!-- 控制台输出 -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+        <!-- 打印日志级别 -->
+        <springProfile name="prod">
+            <filter class="ch.qos.logback.classic.filter.LevelFilter">
+                <level>ERROR</level>
+                <onMatch>ACCEPT</onMatch>
+                <onMismatch>DENY</onMismatch>
+            </filter>
+        </springProfile>
+    </appender>
+
+    <!-- 生成日志文件 -->
+    <appender name="INFO" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- 日志文件输出的文件名 -->
+            <FileNamePattern>${LOG_ROOT}/admin/info-admin-i18n-%d{yyyy-MM-dd}.%i.log</FileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy  class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>${LOG_MAXFILESIZE}</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>${LOG_FILEMAXDAY}</maxHistory>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%n%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] [%X{traceId}] [%logger{50}] %n%-5level: %msg%n</pattern>
+        </encoder>
+        <!-- 打印日志级别 -->
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>INFO</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+
+    <!-- 生成日志文件 -->
+    <appender name="ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- 日志文件输出的文件名 -->
+            <FileNamePattern>${LOG_ROOT}/admin/error-admin-i18n-%d{yyyy-MM-dd}.log</FileNamePattern>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%n%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] [%X{traceId}] [%logger{50}] %n%-5level: %msg%n</pattern>
+        </encoder>
+        <!-- 打印日志级别 -->
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+
+    <if condition='property("ELK").toUpperCase().contains("TRUE")'>
+        <then>
+            <!-- 推送日志至elk -->
+            <appender name="INFO_LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+                <destination>${ELK_ADDRESS}</destination>
+                <!-- 日志输出编码 -->
+                <encoder charset="UTF-8" class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+                    <providers>
+                        <timestamp>
+                            <timeZone>UTC</timeZone>
+                        </timestamp>
+                        <pattern>
+                            <pattern>
+                                {
+                                "traceId": "%X{traceId}",
+                                "logLevel": "%level",
+                                "serviceName": "${springAppName:-SpringApp}",
+                                "pid": "${PID:-}",
+                                "thread": "%thread",
+                                "class": "%logger{40}",
+                                "line":"%L",
+                                "message": "%message"
+                                }
+                            </pattern>
+                        </pattern>
+                    </providers>
+                </encoder>
+                <!-- 打印日志级别 -->
+                <filter class="ch.qos.logback.classic.filter.LevelFilter">
+                    <level>INFO</level>
+                    <onMatch>ACCEPT</onMatch>
+                    <onMismatch>DENY</onMismatch>
+                </filter>
+            </appender>
+
+            <!-- 推送日志至elk -->
+            <appender name="ERROR_LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+                <destination>${ELK_ADDRESS}</destination>
+                <!-- 日志输出编码 -->
+                <encoder charset="UTF-8" class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+                    <providers>
+                        <timestamp>
+                            <timeZone>UTC</timeZone>
+                        </timestamp>
+                        <pattern>
+                            <pattern>
+                                {
+                                "traceId": "%X{traceId}",
+                                "logLevel": "%level",
+                                "serviceName": "${springAppName:-SpringApp}",
+                                "pid": "${PID:-}",
+                                "thread": "%thread",
+                                "class": "%logger{40}",
+                                "line":"%L",
+                                "message": "%message"
+                                }
+                            </pattern>
+                        </pattern>
+                    </providers>
+                </encoder>
+                <!-- 打印日志级别 -->
+                <filter class="ch.qos.logback.classic.filter.LevelFilter">
+                    <level>ERROR</level>
+                    <onMatch>ACCEPT</onMatch>
+                    <onMismatch>DENY</onMismatch>
+                </filter>
+            </appender>
+        </then>
+    </if>
+
+    <!-- 日志输出级别 -->
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="${INFO_APPENDER}"/>
+        <appender-ref ref="${ERROR_APPENDER}"/>
+    </root>
+
+    <logger name="net.sf.ehcache" level="INFO"/>
+    <logger name="druid.sql" level="INFO"/>
+
+    <springProfile name="!prod">
+        <!-- MyBatis log configure -->
+        <logger name="com.apache.ibatis" level="INFO"/>
+
+        <logger name="org.mybatis.spring" level="DEBUG"/>
+        <logger name="java.sql.Connection" level="DEBUG"/>
+        <logger name="java.sql.Statement" level="DEBUG"/>
+        <logger name="java.sql.PreparedStatement" level="DEBUG"/>
+
+        <!-- 减少部分debug日志 -->
+        <logger name="druid.sql" level="INFO"/>
+        <logger name="org.apache.shiro" level="INFO"/>
+        <logger name="org.mybatis.spring" level="INFO"/>
+        <logger name="org.springframework" level="INFO"/>
+        <logger name="org.springframework.context" level="WARN"/>
+        <logger name="org.springframework.beans" level="WARN"/>
+        <logger name="com.baomidou.mybatisplus" level="INFO"/>
+        <logger name="org.apache.ibatis.io" level="INFO"/>
+        <logger name="org.apache.velocity" level="INFO"/>
+        <logger name="org.eclipse.jetty" level="INFO"/>
+        <logger name="io.undertow" level="INFO"/>
+        <logger name="org.xnio.nio" level="INFO"/>
+        <logger name="org.thymeleaf" level="INFO"/>
+        <logger name="springfox.documentation" level="INFO"/>
+        <logger name="org.hibernate.validator" level="INFO"/>
+        <logger name="de.codecentric" level="INFO"/>
+        <!-- cache INFO -->
+        <logger name="net.sf.ehcache" level="INFO"/>
+        <logger name="org.springframework.cache" level="INFO"/>
+    </springProfile>
+    <!-- 减少nacos日志 -->
+    <logger name="com.alibaba.nacos" level="ERROR"/>
+
+</configuration>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly>
+    <id>all</id>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <formats>
+        <format>dir</format>
+        <format>tar.gz</format>
+        <format>zip</format>
+    </formats>
+    <dependencySets>
+        <dependencySet>
+            <includes>
+                <include>com.thirtyai:nezha-cache-starter</include>
+                <include>com.thirtyai:nezha-core-starter</include>
+                <include>com.thirtyai:nezha-core-web-starter</include>
+                <include>com.thirtyai:nezha-db-starter</include>
+                <include>com.thirtyai:nezha-druid-starter</include>
+                <include>com.thirtyai:nezha-dubbo-starter</include>
+                <include>com.thirtyai:nezha-gateway-starter</include>
+                <include>com.thirtyai:nezha-log-starter</include>
+                <include>com.thirtyai:nezha-nacos-starter</include>
+                <include>com.thirtyai:nezha-redis-starter</include>
+                <include>com.thirtyai:nezha-rocketmq-starter</include>
+                <include>com.thirtyai:nezha-i18n</include>
+                <include>com.thirtyai:nezha-i18n-starter</include>
+                <include>com.thirtyai:nezha-swagger-starter</include>
+                <include>com.thirtyai:nezha-common-starter</include>
+                <include>com.thirtyai:nezha-web-security-starter</include>
+            </includes>
+            <outputDirectory>/target</outputDirectory>
+            <unpack>false</unpack>
+        </dependencySet>
+    </dependencySets>
+</assembly>

@@ -1,0 +1,26 @@
+i18ns:
+    - {name: HTTP_Success,code: 200,desc: 成功}
+    - {name: HTTP_Not_Found,code: 404,desc: 404 未找到}
+    - {name: HTTP_Forbidden,code: 403,desc: 403 禁止访问}
+    - {name: HTTP_Un_Authentication,code: 401,desc: 401 未授权}
+    - {name: HTTP_Internal_Error,code: 500,desc: 500 错误}
+    - {name: Application_None,code: 0000,desc: 空状态}
+    - {name: Application_Success,code: 1000,desc: 成功}
+    - {name: Application_Fail,code: 9999,desc: Fail 错误}
+    - {name: Security_Token_Type_Not_Found,code: 1009,desc: 没有找到安全Token类型}
+    - {name: Security_Processor_Not_Found,code: 1008,desc: 没有找到Token对应的Processor}
+    - {name: Security_Credentials_Not_Found,code: 1007,desc: 没有找到 credential}
+    - {name: Security_LoginName_Password_Error,code: 1011,desc: 登录名或密码错误}
+    - {name: Security_Email_Password_Error,code: 1012,desc: 邮箱或密码错误}
+    - {name: Security_No_Reason_Error,code: 1013,desc: 未知错误}
+    - {name: Security_User_Not_Exist,code: 1014,desc: 登录凭证错误，用户不存在}
+    - {name: Security_Access_Token_Expired,code: 1015,desc: 访问Token过期}
+    - {name: Security_Refresh_Token_Expired,code: 1016,desc: 刷新Token过期}
+    - {name: Security_Jwt_Token_Subject_Is_Null,code: 1017,desc: Jwt token 摘要信息为空}
+    - {name: Security_Jwt_Token_Encode_Error,code: 1018,desc: Jwt token 加密异常}
+    - {name: Security_Jwt_Token_Decode_Error,code: 1019,desc: Jwt token 解密异常}
+    - {name: Security_No_Authority_Access,code: 1020,desc: 没有权限访问}
+    - {name: Redis_Limit_Key_Is_Blank,code: 1030,desc: key为空}
+    - {name: Redis_Limit_Is_Limit,code: 1031,desc: 请求过多，已被限流}
+    - {name: Redis_Lock_Get_Lock_Fail,code: 1032,desc: 获取锁失败}
+    - {name: Redis_Lock_Key_Is_Blank,code: 1033,desc: key为空}

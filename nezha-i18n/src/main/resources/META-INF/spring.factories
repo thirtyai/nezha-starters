@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration = \
+com.thirtyai.nezha.i18n.I18nsConfiguration
+

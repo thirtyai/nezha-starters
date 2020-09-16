@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration = \
+com.thirtyai.nezha.core.web.config.NezhaCoreWebConfiguration,\
+com.thirtyai.nezha.core.web.config.NezhaWebCoreInitializedListenerConfiguration
+

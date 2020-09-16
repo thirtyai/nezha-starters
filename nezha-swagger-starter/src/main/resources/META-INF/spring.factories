@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration = \
+com.thirtyai.nezha.swagger.config.SwaggerConfiguration,\
+com.thirtyai.nezha.swagger.config.SwaggerMvcConfiguration

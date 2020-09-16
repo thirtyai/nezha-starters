@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration = \
+com.thirtyai.nezha.seata.config.NezhaSeataConfiguration,\
+  com.thirtyai.nezha.seata.config.SeataMybatisPlusConfiguration

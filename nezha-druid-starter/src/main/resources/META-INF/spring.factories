@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.thirtyai.nezha.druid.config.stat.DruidWebStatFilterConfiguration,\
+com.thirtyai.nezha.druid.config.stat.DruidStatViewServletConfiguration,\
+com.thirtyai.nezha.druid.config.stat.DruidFilterConfiguration,\
+com.thirtyai.nezha.druid.config.stat.DruidSpringAopConfiguration

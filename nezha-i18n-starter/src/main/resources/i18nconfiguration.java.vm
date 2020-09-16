@@ -1,0 +1,14 @@
+package ${clsPackage};
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+${imports}
+/**
+ * ${i18nsConfigName} i18ns configuration
+ *
+ * @author nezha i18n
+ */
+@Configuration("${clsPackage}.${i18nsConfigName}")
+public class ${i18nsConfigName} {
+${beans}
+}

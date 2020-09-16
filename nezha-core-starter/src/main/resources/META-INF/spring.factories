@@ -1,0 +1,6 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.thirtyai.nezha.core.config.NezhaConfiguration
+org.springframework.boot.SpringApplicationRunListener=\
+com.thirtyai.nezha.core.NezhaApplicationRunListener
+org.springframework.context.ApplicationListener=\
+com.thirtyai.nezha.core.NezhaApplicationWelcomeListener

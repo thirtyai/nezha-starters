@@ -1,0 +1,61 @@
+package ${clsPackage};
+
+import cn.hutool.core.util.StrUtil;
+import com.thirtyai.nezha.common.i18n.I18n;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+
+import java.io.File;
+import java.io.IOException;
+
+/**
+ *  ${clsName} i18n manager
+ *
+ * @author nezha i18n
+ */
+@Slf4j
+public class ${clsName} extends I18n {
+
+    private static final String I18N_IDENTIFY_NAME = "${clsPackage}.${clsName}";
+
+    private static String defaultLanguage = "${defaultLanguage}";
+
+    public static String getResourceFolder() {
+        return StrUtil.subBefore(I18N_IDENTIFY_NAME, StrUtil.DOT, true).replace(StrUtil.DOT, File.separator) + File.separator;
+    }
+${objectsInfo}
+    public static void setDefaultLanguage(String local) {
+        defaultLanguage = local;
+    }
+
+    private static ${clsName} self;
+
+    public static ${clsName} self() {
+        if (self == null) {
+            self = new ${clsName}();
+        }
+        return self;
+    }
+
+    private ${clsName}() {
+        super(I18N_IDENTIFY_NAME, "init", "init", "init");
+    }
+
+    private ${clsName}(String name, String code, String desc) {
+        super(I18N_IDENTIFY_NAME, name, code, desc);
+        this.setDefaultLang(defaultLanguage);
+    }
+
+    static {
+        try {
+            String path = ${clsName}.class.getProtectionDomain().getCodeSource().getLocation().toString();
+            Resource[] resources = new PathMatchingResourcePatternResolver().getResources("classpath*:/" + getResourceFolder() + "${resourceFolder}/*.yml");
+            baseInit(I18N_IDENTIFY_NAME, path, resources);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+${staticFieldsInfo}
+}

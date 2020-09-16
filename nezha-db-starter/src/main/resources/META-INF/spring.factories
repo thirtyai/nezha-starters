@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.thirtyai.nezha.db.config.TenantConfiguration,\
+com.thirtyai.nezha.db.config.DatabaseConfiguration

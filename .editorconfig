@@ -1,0 +1,21 @@
+# http://editorconfig.org
+root = true
+
+# space instead tab for indent
+[*]
+indent_style = space
+indent_size = 4
+charset = utf-8
+end_of_line = lf
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.java]
+indent_style = tab
+
+[*.{json,yml}]
+indent_size = 4
+
+[*.md]
+insert_final_newline = false
+trim_trailing_whitespace = false

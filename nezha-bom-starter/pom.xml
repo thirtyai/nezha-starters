@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.6.RELEASE</version><!--spring boot version-->
+        <relativePath/>
+    </parent>
+
+    <groupId>com.thirtyai</groupId>
+    <artifactId>nezha-bom-starter</artifactId>
+    <version>0.4.7-202x207-SNAPSHOT</version><!-- 主版本 -->
+    <packaging>pom</packaging>
+    <name>nezha-bom-starter</name>
+    <url>https://github.com/thirtyai/nezha-starters</url>
+
+    <properties>
+        <spring.boot.version>2.2.6.RELEASE</spring.boot.version><!--spring boot version-->
+        <nezha.starters.version>0.4.7-202x207-SNAPSHOT</nezha.starters.version>
+        <!-- tools update 2020-04-05 -->
+        <hutool.all.version>5.3.5</hutool.all.version>
+        <guava.version>28.2-jre</guava.version>
+        <!-- log update 2020-04-05 -->
+        <logstash.version>6.3</logstash.version>
+        <janino.version>3.1.2</janino.version>
+        <!-- swagger  update 2020-04-05  -->
+        <swagger.version>2.9.2</swagger.version>
+        <!-- the same springfox using 1.5.20 -->
+        <swagger.models.version>1.5.20</swagger.models.version>
+        <swagger.annotations.version>1.5.20</swagger.annotations.version>
+        <knife4j.ui>2.0.3</knife4j.ui>
+        <!-- db update 2020-06-28 -->
+        <druid.version>1.1.23</druid.version>
+        <mybatisplus.version>3.3.0</mybatisplus.version>
+        <hikaricp.version>3.4.5</hikaricp.version>
+        <mysql.connector.version>8.0.11</mysql.connector.version>
+        <!-- lettuce update 2020-04-05 -->
+        <commons.pool2.version>2.8.0</commons.pool2.version>
+
+        <!-- nacos -->
+        <nacos.spring.boot.version>0.2.7</nacos.spring.boot.version>
+        <nacos.spring.context.version>0.3.6</nacos.spring.context.version>
+        <snakeyaml.version>1.26</snakeyaml.version>
+
+        <dubbo.spring.boot.version>2.7.7</dubbo.spring.boot.version>
+        <dubbo.common.version>2.7.7</dubbo.common.version>
+        <dubbo.remoting.version>2.7.7</dubbo.remoting.version>
+        <alibaba.spring.context.support.version>1.0.6</alibaba.spring.context.support.version>
+        <nacos.client.version>1.2.1</nacos.client.version>
+        <fastjson.version>1.2.68</fastjson.version>
+
+        <disruptor.version>3.4.2</disruptor.version>
+        <!-- velocity -->
+        <velocity.version>2.2</velocity.version>
+
+        <!-- JWT -->
+        <jjwt.version>0.11.1</jjwt.version>
+
+        <!-- docker file -->
+        <dockerfile.maven.plugin.version>1.4.12</dockerfile.maven.plugin.version>
+
+        <!--aviator 5.0-->
+        <aviator.version>5.0.0</aviator.version>
+
+        <!-- fix not found javax.annotation.meta.When -->
+        <findbugs.annotations.version>3.0.1</findbugs.annotations.version>
+
+        <!-- seata -->
+        <seata.version>1.3.0</seata.version>
+        <!-- spring cloud gateway -->
+        <spring.cloud.gateway.version>2.2.2.RELEASE</spring.cloud.gateway.version>
+        <!-- alibaba cloud discovery-nacos、rocketmq、sentinel-gateway -->
+        <alibaba.cloud.version>2.2.1.RELEASE</alibaba.cloud.version>
+        <!-- sentinel csp -->
+        <alibaba.sentinel.version>1.7.1</alibaba.sentinel.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.thirtyai</groupId>
+                <artifactId>nezha-log-starter</artifactId>
+                <version>${nezha.starters.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.thirtyai</groupId>
+                <artifactId>nezha-common-starter</artifactId>
+                <version>${nezha.starters.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.thirtyai</groupId>
+                <artifactId>nezha-core-starter</artifactId>
+                <version>${nezha.starters.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.thirtyai</groupId>
+                <artifactId>nezha-core-web-starter</artifactId>
+                <version>${nezha.starters.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.thirtyai</groupId>
+                <artifactId>nezha-core-webflux-starter</artifactId>
+                <version>${nezha.starters.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.thirtyai</groupId>
+                <artifactId>nezha-dubbo-starter</artifactId>
+                <version>${nezha.starters.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.thirtyai</groupId>
+                <artifactId>nezha-cache-starter</artifactId>
+                <version>${nezha.starters.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.thirtyai</groupId>
+                <artifactId>nezha-swagger-starter</artifactId>
+                <version>${nezha.starters.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.thirtyai</groupId>
+                <artifactId>nezha-redis-starter</artifactId>
+                <version>${nezha.starters.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.thirtyai</groupId>
+                <artifactId>nezha-nacos-starter</artifactId>
+                <version>${nezha.starters.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.thirtyai</groupId>
+                <artifactId>nezha-druid-starter</artifactId>
+                <version>${nezha.starters.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.thirtyai</groupId>
+                <artifactId>nezha-db-starter</artifactId>
+                <version>${nezha.starters.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.thirtyai</groupId>
+                <artifactId>nezha-seata-starter</artifactId>
+                <version>${nezha.starters.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.thirtyai</groupId>
+                <artifactId>nezha-i18n</artifactId>
+                <version>${nezha.starters.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.thirtyai</groupId>
+                <artifactId>nezha-i18n-starter</artifactId>
+                <version>${nezha.starters.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.thirtyai</groupId>
+                <artifactId>nezha-web-security-starter</artifactId>
+                <version>${nezha.starters.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.thirtyai</groupId>
+                <artifactId>nezha-gateway-starter</artifactId>
+                <version>${nezha.starters.version}</version>
+            </dependency>
+            <!-- tools -->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.all.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+            <!-- log stash -->
+            <dependency>
+                <groupId>net.logstash.logback</groupId>
+                <artifactId>logstash-logback-encoder</artifactId>
+                <version>${logstash.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.codehaus.janino</groupId>
+                <artifactId>janino</artifactId>
+                <version>${janino.version}</version>
+            </dependency>
+
+            <!-- Swagger & Swagger ui -->
+            <!--            <dependency>-->
+            <!--                <groupId>io.swagger.core.v3</groupId>-->
+            <!--                <artifactId>swagger-annotations</artifactId>-->
+            <!--                <version>${swagger.annotations.version}</version>-->
+            <!--            </dependency>-->
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>${swagger.annotations.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <!--            <dependency>-->
+            <!--                <groupId>io.swagger.core.v3</groupId>-->
+            <!--                <artifactId>swagger-models</artifactId>-->
+            <!--                <version>${swagger.models.version}</version>-->
+            <!--            </dependency>-->
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-models</artifactId>
+                <version>${swagger.models.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>${knife4j.ui}</version>
+            </dependency>
+
+            <!-- db -->
+            <!-- Druid -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zaxxer</groupId>
+                <artifactId>HikariCP</artifactId>
+                <version>${hikaricp.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.oracle</groupId>
+                <artifactId>ojdbc7</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.connector.version}</version>
+            </dependency>
+            <!-- mybatis plus -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatisplus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-extension</artifactId>
+                <version>${mybatisplus.version}</version>
+            </dependency>
+            <!-- fix MayBe bug -->
+            <dependency>
+                <groupId>com.google.code.findbugs</groupId>
+                <artifactId>annotations</artifactId>
+                <version>${findbugs.annotations.version}</version>
+            </dependency>
+            <!-- redis -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-pool2</artifactId>
+                <version>${commons.pool2.version}</version>
+            </dependency>
+            <!-- nacos -->
+            <dependency>
+                <groupId>com.alibaba.boot</groupId>
+                <artifactId>nacos-discovery-spring-boot-starter</artifactId>
+                <version>${nacos.spring.boot.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.alibaba.spring</groupId>
+                        <artifactId>sprint-context-support</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.alibaba.nacos</groupId>
+                        <artifactId>nacos-spring-context</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.boot</groupId>
+                <artifactId>nacos-config-spring-boot-starter</artifactId>
+                <version>${nacos.spring.boot.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.alibaba.spring</groupId>
+                        <artifactId>sprint-context-support</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.alibaba.nacos</groupId>
+                        <artifactId>nacos-spring-context</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.nacos</groupId>
+                <artifactId>nacos-spring-context</artifactId>
+                <version>${nacos.spring.context.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.alibaba.nacos</groupId>
+                        <artifactId>nacos-client</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <!-- seata -->
+            <dependency>
+                <groupId>io.seata</groupId>
+                <artifactId>seata-all</artifactId>
+                <version>${seata.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.alibaba</groupId>
+                        <artifactId>fastjson</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <!-- yaml -->
+            <dependency>
+                <groupId>org.yaml</groupId>
+                <artifactId>snakeyaml</artifactId>
+                <version>${snakeyaml.version}</version>
+            </dependency>
+
+            <!-- Dubbo -->
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-spring-boot-starter</artifactId>
+                <version>${dubbo.spring.boot.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.alibaba.spring</groupId>
+                        <artifactId>sprint-context-support</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>log4j</groupId>
+                        <artifactId>log4j</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <!-- Dubbo Registry Nacos -->
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-registry-nacos</artifactId>
+                <version>${dubbo.spring.boot.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.apache.dubbo</groupId>
+                        <artifactId>dubbo-common</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.dubbo</groupId>
+                        <artifactId>dubbo-remoting-api</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.alibaba.nacos</groupId>
+                        <artifactId>nacos-client</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <!-- fix dubbo nacos reference conflict -->
+            <dependency>
+                <groupId>com.alibaba.spring</groupId>
+                <artifactId>spring-context-support</artifactId>
+                <version>${alibaba.spring.context.support.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.yaml</groupId>
+                        <artifactId>snakeyaml</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-remoting-api</artifactId>
+                <version>${dubbo.remoting.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.nacos</groupId>
+                <artifactId>nacos-client</artifactId>
+                <version>${nacos.client.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.yaml</groupId>
+                        <artifactId>snakeyaml</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.alibaba</groupId>
+                        <artifactId>fastjson</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <!-- disruptor -->
+            <dependency>
+                <groupId>com.lmax</groupId>
+                <artifactId>disruptor</artifactId>
+                <version>${disruptor.version}</version>
+            </dependency>
+
+            <!-- template engine -->
+            <dependency>
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity-engine-core</artifactId>
+                <version>${velocity.version}</version>
+            </dependency>
+
+            <!-- jjwt -->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-api</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-impl</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-jackson</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+
+            <!-- spring cloud gateway -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-gateway</artifactId>
+                <version>${spring.cloud.gateway.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter-webflux</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-sentinel-gateway</artifactId>
+                <version>${alibaba.cloud.version}</version>
+            </dependency>
+
+            <!-- nacos discovery -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+                <version>${alibaba.cloud.version}</version>
+            </dependency>
+
+            <!-- alibaba sentinel -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+                <version>${alibaba.cloud.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.csp</groupId>
+                <artifactId>sentinel-datasource-nacos</artifactId>
+                <version>${alibaba.sentinel.version}</version>
+            </dependency>
+
+            <!-- aviator express evaluator-->
+            <dependency>
+                <groupId>com.googlecode.aviator</groupId>
+                <artifactId>aviator</artifactId>
+                <version>${aviator.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <distributionManagement>
+        <repository>
+            <id>thirtyAI-release</id>
+            <name>Release Repository</name>
+            <url>http://123.59.229.146:8118/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>thirtyAI-snapshot</id>
+            <name>Release Repository</name>
+            <url>http://123.59.229.146:8118/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+</project>

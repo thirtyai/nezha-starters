@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.thirtyai.nezha.web.security.config.SecurityConfiguration,\
+com.thirtyai.nezha.web.security.config.SpringWebSecurityConfiguration

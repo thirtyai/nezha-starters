@@ -1,0 +1,7 @@
+${AnsiColor.BLUE}_____   __            ______
+${AnsiColor.BLUE}___  | / /_____ _________  /_ ______ _
+${AnsiColor.BLUE}__   |/ / _  _ \___  /__  __ \_  __ `/
+${AnsiColor.BLUE}_  /|  /  /  __/__  /__  / / // /_/ /
+${AnsiColor.BLUE}/_/ |_/   \___/ _____//_/ /_/ \__,_/
+
+${AnsiColor.BLUE}:: Nezha : ${nezha.version} :: ${AnsiColor.RED}${spring.application.name} ${AnsiColor.BLUE}: ${AnsiColor.RED}${nezha.env}${AnsiColor.BLUE} :: SpringBoot ${spring-boot.version} :: ${AnsiColor.BRIGHT_BLACK}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html {
+            height: 100%;
+            color: #7a7a7a;
+            background-color: #e6e6e6;
+            -ms-text-size-adjust: 100%;
+            _text-overflow: ellipsis
+        }
+
+        body, button, input, select, textarea {
+            font: 12px/1.8 hiragino sans gb, microsoft yahei, simsun, sans-serif;
+        }
+        div {
+            display: block;
+        }
+        .whac {
+            width: 55%;
+            margin: 0px auto;
+        }
+    </style>
+</head>
+<body>
+<div style="width:100%">
+    <div class="whac">
+        <span style="font-size: 50px">${status}(${error})</span> <span style="float: right;margin-top: 50px;"> time: ${timestamp}</span><br/>
+        path: <span style="font-weight: bold">${path}</span>
+    </div>
+    <div class="whac">
+        <span style="font-size:20px">${message}</span>
+    </div>
+    <div style="width:55%;">
+        ${trace}
+    </div>
+    <div class="whac" style="font-size: 14px">
+        <a href="${webSite}">Nezha(哪吒)</a> version: ${nezhaVersion}. base on spring boot(${springVersion}).
+    </div>
+</div>
+</body>
+</html>

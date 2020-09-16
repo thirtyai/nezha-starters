@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration = \
+com.thirtyai.nezha.redis.config.RedisTemplateConfiguration,\
+com.thirtyai.nezha.redis.config.RedisPubSubConfiguration,\
+com.thirtyai.nezha.redis.config.RedisLockConfiguration,\
+com.thirtyai.nezha.redis.config.RedisLimitConfiguration
