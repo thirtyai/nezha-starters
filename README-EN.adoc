@@ -9,11 +9,11 @@ include three parts :
 - nezha-platform: a platform. include some business modules. e.g.: cms, log, resource, member, shop etc.
 ----
 === nezha demo
-++++
-<iframe width="100%" height="500" src="https://nezha.thirtyai.com/video.html" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-++++
+***
+image::docs/images/demo.jpg[link="https://nezha.thirtyai.com/#td-block-1",align="center",width="100%"]
 
 === nezha feature keywords
+***
 `spring` `dubbo` `distributed` `webmvc` `webflux` `micro service` `quick` `multi tenant` `cache`
 
 `flow limit` `i18n` `docker` `k8s` `security` `distributed transaction` `dynamically gateway`

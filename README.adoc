@@ -8,9 +8,8 @@ nezha(哪吒)是基于Spring boot、Dubbo、Nacos、Spring cloud gateway、Sprin
 . nezha-platform: 多业务单元集合平台。模块化业务单元，如：权限、资源、日志、用户、商城、CMS等。
 ----
 === nezha演示
-++++
-<iframe width="100%" height="500" src="https://nezha.thirtyai.com/video.html" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-++++
+***
+image::docs/images/demo.jpg[link="https://nezha.thirtyai.com/#td-block-1",align="center",width="100%"]
 
 === NEZHA特点关键词
 ***
