@@ -21,6 +21,9 @@ include three parts :
 
 ## nezha typical architecture
 ***
+++++
+<iframe width="100%" height="500" src="https://nezha.thirtyai.com/video.html" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+++++
 
 image::docs/images/nezha-framework.png[alt="架构图",align="center",width="100%"]
 
@@ -92,4 +95,4 @@ NOTE: version：Springboot first version + Springboot second version 'x' + Dubbo
 
 ## Thanks
 ***
-Spring boot, Spring cloud gateway, Spring security, Apache dubbo, sentinel, seata, nacos, redis, caffeine, rocketmq, mybatis-plus, mybatis, hutool, Swagger, Knife4j, druid, disruptor, aviator等所有在nezha-bom-starter中被引入的项目, 以及很多优秀的开源项目(之前项目中用过或者研究过), 如：jFinal, jBoot, t-io，xxl-job, taro, ant-design, vue 等
+Spring boot, Spring cloud gateway, Spring security, Apache dubbo, sentinel, seata, nacos, redis, caffeine, rocketmq, mybatis-plus, mybatis, hutool, Swagger, Knife4j, druid, disruptor, aviator etc. etc. All projects introduced in nezha-bom-starter , also many excellent open source projects(used or studied in previous projects ), ex: jFinal, jBoot, t-io, xxl-job, taro, ant-design, vue etc.
