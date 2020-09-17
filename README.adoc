@@ -1,4 +1,5 @@
 image::docs/images/nezha.png[align="center",width=550,height=104]
+
 ----
 nezha(哪吒)是基于Spring boot、Dubbo、Nacos、Spring cloud gateway、Spring security、Sentinel、Seata、
 Caffeine、RocketMq、Redis、Mybatis、Mybatis-plus、HikariCP、Druid、Swagger、Knife4j、Hutool等优秀项目之上，
@@ -9,22 +10,27 @@ Caffeine、RocketMq、Redis、Mybatis、Mybatis-plus、HikariCP、Druid、Swagge
 . nezha-tool: 命令行工具部分，项目级代码生成，常用的命名行工具。通过共享软件的形式发布。
 . nezha-platform: 多业务单元集合平台。模块化业务单元，如：权限、资源、日志、用户、商城、CMS等。
 ----
+
 === nezha演示
+
 ***
-image::docs/images/demo.jpg[link="https://nezha.thirtyai.com/#td-block-1",align="center",width="100%"]
+image::docs/images/demo.jpg[link="https://nezha.thirtyai.com/#td-block-1",window="_blank",align="center",width="100%"]
 
 === nezha特点关键词
+
 ***
 `Spring体系` `Dubbo` `分布式` `webmvc` `webflux` `微服务` `快速` `多租户` `缓存` `流控` `国际化` `docker` `k8s`
 
 `安全框架` `分布式事务` `动态路由` `配置灵活` `项目级自动生成`
 
 === nezha典型部署架构
+
 ***
 
 image::docs/images/nezha-framework.png[alt="架构图",align="center",width="100%"]
 
 === nezha目标及愿景
+
 ***
 - 有选择的集成优秀开源项目，有选择的集成各项目的运行方式，将高效开发、团队协作、自动化运维融入其中的分布式微服务快速开发框架；
 - 形成低门槛，但高可靠、高稳定、高安全、高效的分布式微服务框架。
@@ -34,6 +40,7 @@ image::docs/images/nezha-framework.png[alt="架构图",align="center",width="100
 NOTE:  信息化建设目标: 架构、工具、平台生态三个方面共同作用, 达到降低开发周期、降低开发成本、快速输出产品、打通数字鸿沟、避免重复建设、有效集中管理数据和IT资产流程化、系统化、自动化！
 
 === nezha包括以下几个方面内容：
+
 ***
 . java8,spring boot2
 . 包依赖梳理
@@ -56,7 +63,9 @@ NOTE:  信息化建设目标: 架构、工具、平台生态三个方面共同�
 . Swagger文档集成
 
 === 框架组成
+
 ***
+
 |==========
 |项目名 | 介绍 | 完善度
 |nezha-bom-starter &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 包引用管理 | 完善
@@ -83,6 +92,7 @@ NOTE:  信息化建设目标: 架构、工具、平台生态三个方面共同�
 |==========
 
 === 版本发布
+
 ***
 nezha版本号：`主版本号` . `子版本号` . `修正版本号` - `版本号标记`  例如：0.0.46-202x207-RELEASE
 
@@ -91,5 +101,6 @@ nezha版本发布词：每次版本更新，顺序选取8句《千字文》作�
 NOTE: 版本号标记：Springboot主版本 + 二位Springboot子版本 + 'x' + Dubbo主版本 + 二位Dubbo子版本 + '-' + nezha阶段版本[BETA|RC|RELEASE|SNAPSHOT]
 
 === 感谢
+
 ***
 Spring boot, Spring Cloud gateway, Spring security, Apache dubbo, sentinel, seata, nacos, redis, caffeine, rocketmq, mybatis-plus, mybatis, hutool, Swagger, Knife4j, druid, disruptor, aviator等所有在nezha-bom-starter中被引入的项目, 以及很多优秀的开源项目(之前项目中用过或者研究过), 如：jFinal, jBoot, t-io，xxl-job, taro, ant-design, vue 等

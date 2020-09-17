@@ -505,15 +505,13 @@
     </dependencyManagement>
 
     <distributionManagement>
-        <repository>
-            <id>thirtyAI-release</id>
-            <name>Release Repository</name>
-            <url>http://123.59.229.146:8118/content/repositories/releases/</url>
-        </repository>
         <snapshotRepository>
-            <id>thirtyAI-snapshot</id>
-            <name>Release Repository</name>
-            <url>http://123.59.229.146:8118/content/repositories/snapshots/</url>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
     </distributionManagement>
 </project>

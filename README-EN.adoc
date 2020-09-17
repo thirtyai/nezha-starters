@@ -1,4 +1,5 @@
 image::docs/images/nezha.png[align="center",width=550,height=104]
+
 ----
 nezha(哪吒) is a distributed micro service framework that base on Spring boot、 Dubbo、Nacos、
 Springcloud gateway、Spring security、Sentinel、Seata、Caffeine、RocketMq、Redis、Mybatis、
@@ -10,11 +11,14 @@ include three parts :
 - nezha-tools: a command tool for developers. project level code generate and other commands.
 - nezha-platform: a platform. include some business modules. e.g.: cms, log, resource, member, shop etc.
 ----
+
 === nezha demo
+
 ***
-image::docs/images/demo.jpg[link="https://nezha.thirtyai.com/#td-block-1",align="center",width="100%"]
+image::docs/images/demo.jpg[link="https://nezha.thirtyai.com/#td-block-1",window="_blank",align="center",width="100%"]
 
 === nezha feature keywords
+
 ***
 `spring` `dubbo` `distributed` `webmvc` `webflux` `micro service` `quick` `multi tenant` `cache`
 
@@ -23,10 +27,12 @@ image::docs/images/demo.jpg[link="https://nezha.thirtyai.com/#td-block-1",align=
 `flexible configuration` `project level generate`
 
 === nezha typical architecture
+
 ***
 image::docs/images/nezha-framework.png[alt="架构图",align="center",width="100%"]
 
 ## goals and vision
+
 ***
 - Selectively integrate excellent open source projects; Thinking efficient development, team collaboration, automated operation and maintenance, make nezha as better as it can;
 - Become a low-threshold, but highly reliable, highly stable, highly secure, and efficient distributed micro service framework.
@@ -36,6 +42,7 @@ image::docs/images/nezha-framework.png[alt="架构图",align="center",width="100
 NOTE:  Goals of the informatization construction: The three aspects of architecture, tools, and platform ecology work together to reduce the development cycle, reduce development costs, quickly output products, bridge the digital divide, avoid repeated construction, and effectively centralize the management of data and IT assets in a process, system, and automation!
 
 ## include below contents ：
+
 ***
 . Java8,spring boot2
 . Package dependency combing
@@ -58,7 +65,9 @@ NOTE:  Goals of the informatization construction: The three aspects of architect
 . Swagger support.
 
 ## Modules
+
 ***
+
 |==========
 |module | desc | completeness
 |nezha-bom-starter &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| packages manager | perfect
@@ -85,6 +94,7 @@ NOTE:  Goals of the informatization construction: The three aspects of architect
 |==========
 
 ## Version
+
 ***
 nezha version：`main version` . `sub version` . `revision version` - `version note`  eg：0.0.46-202x207-RELEASE
 
@@ -93,5 +103,7 @@ nezha release words：every release version will select 8 sentences of "Thousand
 NOTE: version：Springboot first version + Springboot second version 'x' + Dubbo first version + Dubbo second + '-' + nezha phase version [BETA|RC|RELEASE|SNAPSHOT]
 
 ## Thanks
+
 ***
-Spring boot, Spring cloud gateway, Spring security, Apache dubbo, sentinel, seata, nacos, redis, caffeine, rocketmq, mybatis-plus, mybatis, hutool, Swagger, Knife4j, druid, disruptor, aviator etc. etc. All projects introduced in nezha-bom-starter , also many excellent open source projects(used or studied in previous projects ), ex: jFinal, jBoot, t-io, xxl-job, taro, ant-design, vue etc.
+Spring boot, Spring cloud gateway, Spring security, Apache dubbo, sentinel, seata, nacos, redis, caffeine, rocketmq, mybatis-plus, mybatis, hutool, Swagger, Knife4j, druid, disruptor, aviator etc. etc.
+All projects introduced in nezha-bom-starter , also many excellent open source projects(used or studied in previous projects ), ex: jFinal, jBoot, t-io, xxl-job, taro, ant-design, vue etc.
