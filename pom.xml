@@ -67,6 +67,7 @@
         <maven.jar.plugin.version>3.2.0</maven.jar.plugin.version>
         <maven.source.plugin.version>3.2.0</maven.source.plugin.version>
         <maven.javadoc.plugin.version>3.2.0</maven.javadoc.plugin.version>
+        <maven.gpg.version>1.6</maven.gpg.version>
         <snakeyaml.version>1.26</snakeyaml.version>
     </properties>
 
@@ -139,17 +140,6 @@
         <tag>${project.version}</tag>
     </scm>
 
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
-
     <build>
         <finalName>${project.name}-${project.version}</finalName>
         <resources>
@@ -167,71 +157,72 @@
             <plugins>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>${maven.plugin.version}</version>
-                    <configuration>
-                        <source>${java.version}</source>
-                        <target>${java.version}</target>
-                        <encoding>UTF-8</encoding>
-                        <compilerArgs>
-                            <arg>-parameters</arg>
-                        </compilerArgs>
-                    </configuration>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>${maven.gpg.version}</version>
                 </plugin>
-                <!-- jar package -->
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-jar-plugin</artifactId>
-                    <version>${maven.jar.plugin.version}</version>
-                </plugin>
-                <!-- 打source包 -->
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-source-plugin</artifactId>
-                    <version>${maven.source.plugin.version}</version>
-                    <configuration>
-                        <attach>true</attach>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <phase>package</phase>
-                            <goals>
-                                <goal>jar-no-fork</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-        </plugins>
+            </plugins>
         </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>UTF-8</encoding>
+                    <compilerArgs>
+                        <arg>-parameters</arg>
+                    </compilerArgs>
+                </configuration>
+            </plugin>
+            <!-- jar package -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${maven.jar.plugin.version}</version>
+            </plugin>
+            <!-- 打source包 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>${maven.source.plugin.version}</version>
+                <configuration>
+                    <attach>true</attach>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
     </build>
 
     <profiles>
         <profile>
             <id>release-prod</id>
             <build>
-                <pluginManagement>
-                    <plugins>
+                <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
                         <version>${maven.javadoc.plugin.version}</version>
-                        <configuration>
-                            <encoding>UTF-8</encoding>
-                            <charset>UTF-8</charset>
-                            <docencoding>UTF-8</docencoding>
-                            <doclint>none</doclint>
-                            <javaApiLinks>
-                                <api_1.5>https://docs.oracle.com/javase/1.5.0/docs/api/</api_1.5>
-                                <api_1.8>https://docs.oracle.com/javase/8/docs/api/</api_1.8>
-                                <api_9>https://docs.oracle.com/javase/9/docs/api/</api_9>
-                            </javaApiLinks>
-                        </configuration>
                         <executions>
                             <execution>
                                 <id>attach-javadocs</id>
                                 <goals>
                                     <goal>jar</goal>
                                 </goals>
+                                <configuration>
+                                    <use>false</use>
+                                    <source>1.8</source>
+                                    <links><link>http://docs.oracle.com/javase/8/docs/api/</link>		                             <link>http://docs.oracle.com/javase/7/docs/api/</link></links>
+                                    <doclint>none</doclint>
+                                </configuration>
                             </execution>
                         </executions>
                     </plugin>
@@ -239,7 +230,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
-                        <version>1.6</version>
+                        <version>${maven.gpg.version}</version>
                         <executions>
                             <execution>
                                 <id>sign-artifacts</id>
@@ -251,8 +242,17 @@
                         </executions>
                     </plugin>
                 </plugins>
-                </pluginManagement>
             </build>
+            <distributionManagement>
+                <snapshotRepository>
+                    <id>ossrh</id>
+                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+                </snapshotRepository>
+                <repository>
+                    <id>ossrh</id>
+                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+                </repository>
+            </distributionManagement>
         </profile>
     </profiles>
 

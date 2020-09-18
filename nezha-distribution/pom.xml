@@ -77,7 +77,7 @@
     </dependencies>
     <profiles>
         <profile>
-            <id>release-prod</id>
+            <id>distribute</id>
             <build>
                 <plugins>
                     <plugin>
