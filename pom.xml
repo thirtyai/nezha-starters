@@ -194,9 +194,9 @@
                     </configuration>
                     <executions>
                         <execution>
-                            <phase>compile</phase>
+                            <phase>package</phase>
                             <goals>
-                                <goal>jar</goal>
+                                <goal>jar-no-fork</goal>
                             </goals>
                         </execution>
                     </executions>
