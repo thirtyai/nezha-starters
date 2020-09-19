@@ -5,10 +5,13 @@
 
     <groupId>com.thirtyai</groupId>
     <artifactId>nezha-bom-starter</artifactId>
-    <version>0.4.9-202x207-SNAPSHOT</version><!-- 主版本 -->
+    <version>0.4.9-202x207-RELEASE</version><!-- 主版本 -->
     <packaging>pom</packaging>
     <name>nezha-bom-starter</name>
     <url>https://github.com/thirtyai/nezha-starters</url>
+    <description>
+        nezha-bom-starter: nezha(哪吒) starters dependencies.
+    </description>
 
     <licenses>
         <license>
@@ -16,6 +19,13 @@
             <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
         </license>
     </licenses>
+
+    <scm>
+        <connection>scm:git:https://github.com/thirtyai/nezha-starters.git</connection>
+        <developerConnection>scm:git:https://github.com/thirtyai/nezha-starters.git</developerConnection>
+        <url>https://github.com/thirtyai/nezha-starters</url>
+        <tag>${project.version}</tag>
+    </scm>
 
     <developers>
         <developer>
@@ -28,7 +38,7 @@
 
     <properties>
         <spring.boot.version>2.2.6.RELEASE</spring.boot.version><!--spring boot version-->
-        <nezha.starters.version>0.4.9-202x207-SNAPSHOT</nezha.starters.version>
+        <nezha.starters.version>0.4.9-202x207-RELEASE</nezha.starters.version>
         <!-- tools update 2020-09-19 -->
         <hutool.all.version>5.4.3</hutool.all.version>
         <guava.version>28.2-jre</guava.version>

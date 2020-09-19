@@ -6,7 +6,7 @@
 
     <groupId>com.thirtyai</groupId>
     <artifactId>nezha-starters</artifactId>
-    <version>0.4.9-202x207-SNAPSHOT</version>
+    <version>0.4.9-202x207-RELEASE</version>
     <packaging>pom</packaging>
 
     <licenses>
@@ -15,6 +15,13 @@
             <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
         </license>
     </licenses>
+
+    <scm>
+        <connection>scm:git:https://github.com/thirtyai/nezha-starters.git</connection>
+        <developerConnection>scm:git:https://github.com/thirtyai/nezha-starters.git</developerConnection>
+        <url>https://github.com/thirtyai/nezha-starters</url>
+        <tag>${project.version}</tag>
+    </scm>
 
     <developers>
         <developer>
@@ -53,6 +60,16 @@
 
     <name>${project.artifactId}</name>
     <url>https://nezha.thirtyai.com</url>
+    <description>
+        nezha(哪吒)是基于Spring boot、Dubbo、Nacos、Spring cloud gateway、Spring security、Sentinel、Seata、
+        Caffeine、RocketMq、Redis、Mybatis、Mybatis-plus、HikariCP、Druid、Swagger、Knife4j、Hutool等优秀项目之上，
+        结合多个项目的实施经验，总结的一套分布式微服务快速开发框架, 开箱即用。
+
+        包括三大部分：
+        . nezha-starters: 框架部分。
+        . nezha-tool: 命令行工具部分，项目级代码生成，常用的命名行工具。通过共享软件的形式发布。
+        . nezha-platform: 多业务单元集合平台。模块化业务单元，如：权限、资源、日志、用户、商城、CMS等。
+    </description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -127,13 +144,6 @@
         </dependency>
 
     </dependencies>
-
-    <scm>
-        <connection>scm:git:https://github.com/thirtyai/nezha-starters.git</connection>
-        <developerConnection>scm:git:https://github.com/thirtyai/nezha-starters.git</developerConnection>
-        <url>https://github.com/thirtyai/nezha-starters</url>
-        <tag>${project.version}</tag>
-    </scm>
 
     <build>
         <finalName>${project.name}-${project.version}</finalName>
