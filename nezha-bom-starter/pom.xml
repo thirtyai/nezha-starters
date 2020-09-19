@@ -54,6 +54,7 @@
         <!-- db update 2020-06-28 -->
         <druid.version>1.1.23</druid.version>
         <mybatisplus.version>3.3.0</mybatisplus.version>
+        <ojdbc.version>19.3.0.0</ojdbc.version>
         <hikaricp.version>3.4.5</hikaricp.version>
         <mysql.connector.version>8.0.11</mysql.connector.version>
         <!-- lettuce update 2020-04-05 -->
@@ -272,6 +273,7 @@
             <dependency>
                 <groupId>com.oracle</groupId>
                 <artifactId>ojdbc7</artifactId>
+                <version>${ojdbc.version}</version>
             </dependency>
             <dependency>
                 <groupId>mysql</groupId>
