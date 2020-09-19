@@ -7,7 +7,7 @@
     <parent>
         <artifactId>nezha-starters</artifactId>
         <groupId>com.thirtyai</groupId>
-        <version>0.4.8-202x207-SNAPSHOT</version>
+        <version>0.4.9-202x207-SNAPSHOT</version>
     </parent>
 
     <artifactId>nezha-core-starter</artifactId>
