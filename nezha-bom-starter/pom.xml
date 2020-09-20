@@ -20,13 +20,6 @@
         </license>
     </licenses>
 
-    <scm>
-        <connection>scm:git:https://github.com/thirtyai/nezha-starters.git</connection>
-        <developerConnection>scm:git:https://github.com/thirtyai/nezha-starters.git</developerConnection>
-        <url>https://github.com/thirtyai/nezha-starters</url>
-        <tag>${project.version}</tag>
-    </scm>
-
     <developers>
         <developer>
             <name>kyle ju</name>
@@ -35,6 +28,13 @@
             <organizationUrl>https://nezha.thirtyai.com</organizationUrl>
         </developer>
     </developers>
+
+    <scm>
+        <connection>scm:git:https://github.com/thirtyai/nezha-starters.git</connection>
+        <developerConnection>scm:git:https://github.com/thirtyai/nezha-starters.git</developerConnection>
+        <url>https://github.com/thirtyai/nezha-starters</url>
+        <tag>nezha(哪吒)、springboot、dubbo、micro service、${project.version}</tag>
+    </scm>
 
     <properties>
         <spring.boot.version>2.2.6.RELEASE</spring.boot.version><!--spring boot version-->
