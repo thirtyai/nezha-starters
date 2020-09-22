@@ -33,7 +33,7 @@
         <connection>scm:git:https://github.com/thirtyai/nezha-starters.git</connection>
         <developerConnection>scm:git:https://github.com/thirtyai/nezha-starters.git</developerConnection>
         <url>https://github.com/thirtyai/nezha-starters</url>
-        <tag>nezha(哪吒)、springboot、dubbo、micro service、${project.version}</tag>
+        <tag>nezha(哪吒) springboot dubbo micro service ${project.version}</tag>
     </scm>
 
     <properties>
