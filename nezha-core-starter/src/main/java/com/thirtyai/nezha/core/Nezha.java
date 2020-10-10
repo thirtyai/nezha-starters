@@ -24,7 +24,7 @@ public class Nezha {
 	public final static String GROUP_ID = "com.thirtyai";
 	public final static String ARTIFACT_ID = "nezha-bom-starter";
 	public final static String WEB_SITE = "https://nezha.thirtyai.com";
-	public final static String VERSION = "0.5.0-202x207-SNAPSHOT";
+	public final static String VERSION = "0.5.0-202x207-RELEASE";
 
 	/**
 	 * profile enum ( dev,test,prod )
