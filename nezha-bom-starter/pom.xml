@@ -51,9 +51,9 @@
         <swagger.models.version>1.5.20</swagger.models.version>
         <swagger.annotations.version>1.5.20</swagger.annotations.version>
         <knife4j.ui>2.0.3</knife4j.ui>
-        <!-- db update 2020-06-28 -->
-        <druid.version>1.1.23</druid.version>
-        <mybatisplus.version>3.3.0</mybatisplus.version>
+        <!-- db update 2020-10-10 -->
+        <druid.version>1.2.1</druid.version>
+        <mybatisplus.version>3.4.0</mybatisplus.version>
         <hikaricp.version>3.4.5</hikaricp.version>
         <mysql.connector.version>8.0.11</mysql.connector.version>
         <ojdbc.version>19.3.0.0</ojdbc.version>
@@ -70,7 +70,7 @@
         <dubbo.remoting.version>2.7.8</dubbo.remoting.version>
         <alibaba.spring.context.support.version>1.0.10</alibaba.spring.context.support.version>
         <nacos.client.version>1.2.1</nacos.client.version>
-        <fastjson.version>1.2.73</fastjson.version>
+        <fastjson.version>1.2.74</fastjson.version>
 
         <disruptor.version>3.4.2</disruptor.version>
         <!-- velocity -->
