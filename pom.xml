@@ -6,7 +6,7 @@
 
     <groupId>com.thirtyai</groupId>
     <artifactId>nezha-starters</artifactId>
-    <version>0.5.1-202x207-SNAPSHOT</version>
+    <version>0.5.1-202x207-RELEASE</version>
     <packaging>pom</packaging>
 
     <licenses>
