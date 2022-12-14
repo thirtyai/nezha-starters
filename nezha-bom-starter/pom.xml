@@ -63,7 +63,7 @@
         <!-- nacos -->
         <nacos.spring.boot.version>0.2.7</nacos.spring.boot.version>
         <nacos.spring.context.version>0.3.6</nacos.spring.context.version>
-        <snakeyaml.version>1.27</snakeyaml.version>
+        <snakeyaml.version>1.32</snakeyaml.version>
 
         <dubbo.spring.boot.version>2.7.8</dubbo.spring.boot.version>
         <dubbo.common.version>2.7.8</dubbo.common.version>
